@@ -1,0 +1,47 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout respo
+        uses: actions/checkout@v4
+
+      - name: Bun setup
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependancies
+        run: bun i
+
+      - name: Build
+        run: bun run build
+
+      - name: Uploading build output
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
