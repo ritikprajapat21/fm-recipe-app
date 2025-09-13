@@ -3,7 +3,7 @@ function App() {
     <main className="font-sans md:bg-[#DED3C8] pb-8 md:py-16">
       <div className="w-full md:max-w-[800px] bg-white/70 mx-auto md:p-8 md:rounded-3xl">
         <img
-          src="/images/image-omelette.jpeg"
+          src="images/image-omelette.jpeg"
           alt="Omelette"
           className="aspect-16/9 md:rounded-2xl object-cover"
         />

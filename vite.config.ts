@@ -4,5 +4,6 @@ import { defineConfig, type PluginOption } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [react(), tailwindcss() as PluginOption],
+  plugins: [react(), tailwindcss() as PluginOption],
+  base: "/fm-recipe-app",
 });
