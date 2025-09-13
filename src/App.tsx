@@ -1,3 +1,5 @@
+import Heading from "./components/heading";
+
 function App() {
   return (
     <main className="font-sans md:bg-[#DED3C8] pb-8 md:py-16">
@@ -9,9 +11,14 @@ function App() {
         />
 
         <div className="flex flex-col gap-8 p-4 md:px-0 md:pt-8 text-neutral-600">
-          <h1 className="text-4xl md:text-5xl font-serif text-neutral-800">
-            Simple Omelette Recipe
-          </h1>
+          <Heading
+            as="h1"
+            title="Simple Omelette Recipe"
+            className="text-4xl md:text-5xl"
+          />
+          {/* <h1 className="text-4xl md:text-5xl font-serif text-neutral-800"> */}
+          {/*   Simple Omelette Recipe */}
+          {/* </h1> */}
 
           <p className="font-normal">
             An easy and quick dish, perfect for any meal. This classic omelette
@@ -20,7 +27,10 @@ function App() {
           </p>
 
           <div className="p-4 bg-[#EBE3EA] rounded-2xl leading-10">
-            <h2 className="font-semibold text-2xl">Preparation time</h2>
+            <Heading
+              title="Preparation time"
+              className="font-semibold text-2xl font-sans! text-neutral-600!"
+            />
             <ul className="list-disc px-4">
               <li>
                 <span className="font-bold before:ml-5">Total:</span>{" "}
@@ -38,7 +48,11 @@ function App() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-4xl font-serif text-[#7A4437]">Ingredients</h2>
+            <Heading
+              title="Ingredients"
+              className="text-3xl md:text-4xl text-[#7A4437]"
+            />
+            {/* <h2 className="text-4xl font-serif text-[#7A4437]">Ingredients</h2> */}
             <ul className="list-disc pl-6 space-y-2">
               <li className="before:ml-5">2-3 large eggs</li>
               <li className="before:ml-5">Salt, to taste</li>
@@ -53,7 +67,10 @@ function App() {
           <div className="border-b border-[#adadad]" />
 
           <div className="space-y-4">
-            <h2 className="text-4xl font-serif text-[#7A4437]">Instructions</h2>
+            <Heading
+              title="Instructions"
+              className="text-3xl md:text-4xl text-[#7A4437]"
+            />
             <ol className="list-decimal list-outside space-y-2 pl-6">
               <li className="marker:font-bold marker:font-['Cambria'] pl-6">
                 <span className="font-bold">Beat the eggs:</span> In a bowl,
@@ -98,7 +115,10 @@ function App() {
           <div className="border-b border-[#adadad]" />
 
           <div className="space-y-6">
-            <h2 className="text-4xl font-serif text-[#7A4437]">Nutrition</h2>
+            <Heading
+              title="Nutrition"
+              className="text-3xl md:text-4xl text-[#7A4437]"
+            />
             <p>
               The table below shows nutritional values per serving without the
               additional fillings.
