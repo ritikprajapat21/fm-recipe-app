@@ -1,11 +1,66 @@
 import Heading from "./components/heading";
+import List from "./components/list";
 
 function App() {
+  const preparationList = [
+    { bold: "Total:", content: "Approximately 10 minutes" },
+    { bold: "Preparation:", content: "5 minutes" },
+    { bold: "Cooking:", content: "5 minutes" },
+  ];
+
+  const ingredientsList = [
+    { content: "2-3 large eggs" },
+    { content: "Salt, to taste" },
+    { content: "Pepper, to taste" },
+    { content: "1 tablespoon of butter or oil" },
+    {
+      content:
+        "Optional fillings: cheese, diced vegetables, cooked meats, herbs",
+    },
+  ];
+
+  const instructionsList = [
+    {
+      bold: "Beat the eggs:",
+      content:
+        "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.",
+    },
+
+    {
+      bold: "Heat the pan:",
+      content:
+        "Place a non-stick frying pan over medium heat and add butter or oil.",
+    },
+
+    {
+      bold: "Cook the omelette:",
+      content:
+        "Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.",
+    },
+
+    {
+      bold: "Add fillings (optional):",
+      content:
+        "When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.",
+    },
+
+    {
+      bold: "Fold and serve:",
+      content:
+        "As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.",
+    },
+
+    {
+      bold: "Enjoy:",
+      content: "Serve hot, with additional salt and pepper if needed.",
+    },
+  ];
+
   return (
     <main className="font-sans md:bg-[#DED3C8] pb-8 md:py-16">
       <div className="w-full md:max-w-[800px] bg-white/70 mx-auto md:p-8 md:rounded-3xl">
         <img
-          src="images/image-omelette.jpeg"
+          src="/fm-recipe-app/images/image-omelette.jpeg"
           alt="Omelette"
           className="aspect-16/9 md:rounded-2xl object-cover"
         />
@@ -31,20 +86,11 @@ function App() {
               title="Preparation time"
               className="font-semibold text-2xl font-sans! text-neutral-600!"
             />
-            <ul className="list-disc px-4">
-              <li>
-                <span className="font-bold before:ml-5">Total:</span>{" "}
-                Approximately 10 minutes
-              </li>
-              <li>
-                <span className="font-bold before:ml-5">Preparation:</span> 5
-                minutes
-              </li>
-              <li>
-                <span className="font-bold before:ml-5">Cooking:</span> 5
-                minutes
-              </li>
-            </ul>
+            <List
+              items={preparationList}
+              listClassName="list-disc px-4"
+              itemsClassName="before:ml-5"
+            />
           </div>
 
           <div className="space-y-6">
@@ -52,16 +98,11 @@ function App() {
               title="Ingredients"
               className="text-3xl md:text-4xl text-[#7A4437]"
             />
-            {/* <h2 className="text-4xl font-serif text-[#7A4437]">Ingredients</h2> */}
-            <ul className="list-disc pl-6 space-y-2">
-              <li className="before:ml-5">2-3 large eggs</li>
-              <li className="before:ml-5">Salt, to taste</li>
-              <li className="before:ml-5">Pepper, to taste</li>
-              <li className="before:ml-5">1 tablespoon of butter or oil</li>
-              <li className="before:ml-5">
-                Optional fillings: cheese, diced vegetables, cooked meats, herbs
-              </li>
-            </ul>
+            <List
+              items={ingredientsList}
+              listClassName="list-disc pl-6 space-y-2"
+              itemsClassName="before:ml-5"
+            />
           </div>
 
           <div className="border-b border-[#adadad]" />
@@ -71,45 +112,12 @@ function App() {
               title="Instructions"
               className="text-3xl md:text-4xl text-[#7A4437]"
             />
-            <ol className="list-decimal list-outside space-y-2 pl-6">
-              <li className="marker:font-bold marker:font-['Cambria'] pl-6">
-                <span className="font-bold">Beat the eggs:</span> In a bowl,
-                beat the eggs with a pinch of salt and pepper until they are
-                well mixed. You can add a tablespoon of water or milk for a
-                fluffier texture.
-              </li>
 
-              <li className="marker:font-bold pl-6">
-                <span className="font-bold">Heat the pan:</span> Place a
-                non-stick frying pan over medium heat and add butter or oil.
-              </li>
-
-              <li className="marker:font-bold pl-6">
-                <span className="font-bold">Cook the omelette:</span> Once the
-                butter is melted and bubbling, pour in the eggs. Tilt the pan to
-                ensure the eggs eveh2 className="text-4xl font-serif
-                text-[#7A4437]"nly coat the surface.
-              </li>
-
-              <li className="marker:font-bold pl-6">
-                <span className="font-bold">Add fillings (optional):</span> When
-                the eggs begin to set at the edges but are still slightly runny
-                in the middle, sprinkle your chosen fillings over one half of
-                the omelette.
-              </li>
-
-              <li className="marker:font-bold pl-6">
-                <span className="font-bold">Fold and serve:</span> As the
-                omelette continues to cook, carefully lift one edge and fold it
-                over the fillings. Let it cook for another minute, then slide it
-                onto a plate.
-              </li>
-
-              <li className="marker:font-bold pl-6">
-                <span className="font-bold">Enjoy:</span> Serve hot, with
-                additional salt and pepper if needed.
-              </li>
-            </ol>
+            <List
+              items={instructionsList}
+              listClassName="list-decimal space-y-2 pl-6"
+              itemsClassName="marker:font-bold pl-6"
+            />
           </div>
 
           <div className="border-b border-[#adadad]" />
